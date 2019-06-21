@@ -11,20 +11,15 @@
 |
 */
 
-Route::get('/', function(){
-    return view('index');
-});
+Route::view('/', 'index');
 
-Route::get('/livros', function(){
-    return view('livros');
-});
+Route::get('livros', 'LivroController@create')->name('livro.create');
+Route::post('livros', 'LivroController@store')->name('livro.store');
 
-Route::get('/alunos', function(){
-    return view('alunos');
-});
+Route::get('alunos', 'AlunoController@create')->name('aluno.create');
+Route::post('alunos', 'AlunoController@store')->name('aluno.store');
 
-Route::get('/emprestimos', function(){
-    return view('emprestimos');
-});
+Route::get('emprestimos', 'EmprestimoController@create')->name('emprestimo.create');
+Route::post('emprestimos', 'EmprestimoController@store')->name('emprestimo.store');
 
 ?>
